@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Fitness-Zone</title>
+    <link rel="stylesheet" href="/css/webcss.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/product.css">
+</head>
+
+<body>
+    <header>
+        <div class="menubar">
+
+            {{> navbar}}
+
+            {{#if msg}}
+            <div class="menuright">
+                <a href="#"><b class="fa fa-shopping-cart"></b></a>
+                <a href="#"><b class="fa fa-user"></b></a>
+                <a href="/logout">logout</a>
+            </div>
+
+            {{else}}
+            <div class="menuright">
+                <a href="/login"><b class="login">Login</b></a>
+            </div>
+            {{/if}}
+
+        </div>
+    </header>
+
+
+
+    <div class="product_div">
+
+        <div class="product-details">
+
+            <div class="image">
+                <img src="product/multigym.png">
+            </div>
+
+            <div class="details">
+                <h2>Metal 418BA-Stella Light Commercial Multi Gym</h2>
+                <table>
+                    <tr>
+                        <th>Model No.</th>
+                        <td>418 BA STELLA</td>
+                    </tr>
+                    <tr>
+                        <th>Usage/Application</th>
+                        <td>Gym</td>
+                    </tr>
+                    <tr>
+                        <th>Number Of Stations</th>
+                        <td>6 Stations</td>
+                    </tr>
+                    <tr>
+                        <th>Material</th>
+                        <td>Metal</td>
+                    </tr>
+                </table>
+                <br>
+                <p style="font-size: larger;">Price:&nbsp;
+                    &#8377;<del>1.25 Lakh</del>&nbsp;<ins class="price">&#8377;1.16 Lakh</ins>
+                </p>
+                <p style="font-size: larger;">Rating:&nbsp;
+                    <span class="fa fa-star" style="color: red"></span>
+                    <span class="fa fa-star" style="color: red"></span>
+                    <span class="fa fa-star" style="color: red"></span>
+                    <span class="fa fa-star" style="color: red"></span>
+                    <span class="fa fa-star"></span>
+                </p>
+                <div class="button">
+                    <button class="cart">Add to cart</button>
+                    <button class="buy">Buy Now</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>

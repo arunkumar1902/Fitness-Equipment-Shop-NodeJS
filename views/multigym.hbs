@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Fitness-Zone</title>
+    <link rel="stylesheet" href="/css/webcss.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/product.css">
+</head>
+
+<body>
+    <header>
+        <div class="menubar">
+
+            {{> navbar}}
+
+            {{#if msg}}
+            <div class="menuright">
+                <a href="#"><b class="fa fa-shopping-cart"></b></a>
+                <a href="#"><b class="fa fa-user"></b></a>
+                <a href="/logout">logout</a>
+            </div>
+
+            {{else}}
+            <div class="menuright">
+                <a href="/login"><b class="login">Login</b></a>
+            </div>
+            {{/if}}
+        </div>
+    </header>
+    <br>
+    <br>
+
+
+    <div class="product_div">
+
+        <div class="product-details">
+
+            <div class="image">
+                <img src="/product/multi.png">
+            </div>
+
+            <div class="details">
+                <h2>Chest Personal 3 Weight Stack/ 4 Station Gym, Number of Stations: 4 Stations, Model Name/ Number: MP
+                    2.5</h2>
+                <table>
+                    <tr>
+                        <th>Number of stations</th>
+                        <td>4 Stations</td>
+                    </tr>
+                    <tr>
+                        <th>Model Name/Number</th>
+                        <td>MP 2.5</td>
+                    </tr>
+                    <tr>
+                        <th>Usage/Application</th>
+                        <td>Gym</td>
+                    </tr>
+                    <tr>
+                        <th>Target</th>
+                        <td>Chest</td>
+                    </tr>
+                </table>
+                <br>
+                <p style="font-size: larger;">Price:&nbsp;
+                    &#8377;<del>50,500</del>&nbsp;<ins class="price">&#8377;49,998</ins>
+                </p>
+                <p style="font-size: larger;">Rating:&nbsp;
+                    <span class="fa fa-star" style="color: red;"></span>
+                    <span class="fa fa-star" style="color: red;"></span>
+                    <span class="fa fa-star" style="color: red;"></span>
+                    <span class="fa fa-star" style="color: red;"></span>
+                    <span class="fa fa-star"></span>
+                </p>
+                <div class="button">
+                    <button class="cart">Add to cart</button>
+                    <button class="buy">Buy Now</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>

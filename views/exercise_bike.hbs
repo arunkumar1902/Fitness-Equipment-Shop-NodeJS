@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Fitness-Zone</title>
+    <link rel="stylesheet" href="/css/webcss.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/product.css">
+</head>
+
+<body>
+    <header>
+        <div class="menubar">
+
+            {{> navbar}}
+
+            {{#if msg}}
+            <div class="menuright">
+                <a href="#"><b class="fa fa-shopping-cart"></b></a>
+                <a href="#"><b class="fa fa-user"></b></a>
+                <a href="/logout">logout</a>
+            </div>
+
+            {{else}}
+            <div class="menuright">
+                <a href="/login"><b class="login">Login</b></a>
+            </div>
+            {{/if}}
+
+        </div>
+    </header>
+
+
+
+    <div class="product_div">
+
+        <div class="product-details">
+
+            <div class="image">
+                <img src="product/spin exercise bike.png">
+            </div>
+
+            <div class="details">
+                <h2>ENERGIE FITNESS Semi Commercial Spin Bike, Model Name/Number: ECT011</h2>
+                <table>
+                    <tr>
+                        <th>Brand</th>
+                        <td>ENERGIE FITNESS</td>
+                    </tr>
+                    <tr>
+                        <th>Model</th>
+                        <td>ECT011</td>
+                    </tr>
+                    <tr>
+                        <th>Type Of Bicycle</th>
+                        <td>Spin</td>
+                    </tr>
+                    <tr>
+                        <th>Resistance Type</th>
+                        <td>Non-Magnetic</td>
+                    </tr>
+                    <tr>
+                        <th>Maximun User Weight</th>
+                        <td>150kg</td>
+                    </tr>
+                </table>
+                <br>
+                <p style="font-size: larger;">Price:&nbsp;
+                    &#8377;<del>21,000</del>&nbsp;<ins class="price">&#8377;20,000</ins>
+                </p>
+                <p style="font-size: larger;">Rating:&nbsp;
+                    <span class="fa fa-star" style="color: red"></span>
+                    <span class="fa fa-star" style="color: red"></span>
+                    <span class="fa fa-star" style="color: red"></span>
+                    <span class="fa fa-star" style="color: red"></span>
+                    <span class="fa fa-star"></span>
+                </p>
+                <div class="button">
+                    <button class="cart">Add to cart</button>
+                    <button class="buy">Buy Now</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>

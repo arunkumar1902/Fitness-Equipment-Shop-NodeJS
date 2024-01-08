@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Log in - Fitness Zone</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <a href="/"><i class="fa fa-close fa-2x" style="color: rgb(51, 51, 133);"></i></a>
+    </header>
+    <center>
+        <div class="div">
+
+            <div class="login">
+                <h2>Login</h2>
+            </div>
+
+            {{#if msg}}
+            <p class="{{msg_type}}">{{msg}}</p>
+            {{/if}}
+
+            <form action="/auth/login" method="post" onsubmit="validate()">
+
+                <div class="data">
+                    <label for="email">Email</label>
+                    <br>
+                    <input type="email" name="email" id="email" onkeyup="validateemail()">
+                    <p id="emailverify"></p>
+                </div>
+
+                <br>
+
+                <div class="data">
+                    <label for="password">Password</label>
+                    <br>
+                    <input type="password" name="password" id="password" onkeyup="validatepassword()">
+                    <p id="passwordverify"></p>
+                </div>
+
+                <br>
+
+                <div class="forgot-pass">
+                    <a href="#">Forgot Password?</a>
+                </div>
+
+                <br>
+
+                <div class="btn">
+                    <button type="submit">Login</button>
+                </div>
+
+                <br>
+
+                <div class="signup">
+                    Create an account ? <a href="/register">Signup</a>
+                </div>
+            </form>
+            <script>
+                const email = document.getElementById("emailverify");
+                const password = document.getElementById("passwordverify");
+
+                function validateemail() {
+                    const emailcheck = document.getElementById('email').value.trim();
+
+                    if (emailcheck === '') {
+                        email.innerHTML = 'Please enter your email id';
+                        document.getElementById("email").style.borderColor = "red";
+                        return false;
+                    }
+                    else if (!emailcheck.match(/^([a-zA-Z0-9-_\.]+)@([a-zA-Z0-9]+)\.([a-zA-Z]{2,10})(\.[a-zA-Z]{2,8})?$/)) {
+                        email.innerHTML = 'Please enter valid email id';
+                        document.getElementById("email").style.borderColor = "red";
+                        return false;
+                    }
+
+                    else if (emailcheck.match(/^([a-zA-Z0-9-_\.]+)@([a-zA-Z0-9]+)\.([a-zA-Z]{2,10})(\.[a-zA-Z]{2,8})?$/)) {
+                        email.innerHTML = '';
+                        document.getElementById("email").style.borderColor = "green";
+                        return true;
+                    }
+                }
+                function validatepassword() {
+                    const passwordcheck = document.getElementById('password').value.trim();
+                    if (passwordcheck === '') {
+                        password.innerHTML = 'Please enter your password';
+                        document.getElementById("password").style.borderColor = "red";
+                        return false;
+                    }
+                    else if (!passwordcheck.match(/^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{7,15}$/)) {
+                        password.innerHTML = 'Please enter valid password';
+                        document.getElementById("password").style.borderColor = "red";
+                        return false;
+                    }
+                    else if (passwordcheck.match(/^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{7,15}$/)) {
+                        password.innerHTML = '';
+                        document.getElementById("password").style.borderColor = "Green";
+                        return true;
+                    }
+                }
+                function validate() {
+                    if (!validateemail() || !validatepassword) {
+                        alert('PLEASE FILL ALL THE FIELD');
+                        return false;
+                    }
+                }
+            </script>
+        </div>
+
+    </center>
+</body>
+
+</html>

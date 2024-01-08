@@ -1,0 +1,114 @@
+*{
+    margin: 0;
+}
+body{
+    background-color: rgb(239, 240, 241);
+ }
+.menubar{
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(87, 87, 164);
+}
+.navbar{
+    padding: 1%;
+}
+.navbar a{
+    padding: 14px;
+    color: white;
+    font-size: larger;
+    text-decoration: none;
+}
+.navbar a:hover{
+    color: black;
+}
+.dropdown{
+    position: relative;
+    display: inline-block;
+}
+.dropdown-content{
+    display: none;
+    position:absolute;
+    background-color:rgb(87, 87, 164);
+}
+.dropdown-content a{
+    display: block;
+}
+.dropdown:hover .dropdown-content{
+    display: block;
+}
+.menuright{
+    padding: 1%;
+}
+.menuright a{
+    padding: 16px;
+    color: white;
+    font-size: larger;
+    text-decoration: none;
+}
+.fa-shopping-cart:hover {
+    color: black;
+}
+.login:hover{
+    text-decoration: underline;
+}
+
+
+
+.main h2{
+    font-size: xx-large;
+    padding-left:40px;
+    padding-top: 20px;
+    color:black;
+}
+.products{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding: 30px;
+}
+
+.equipments{
+    background-color: white;
+    padding: 20px;
+    margin: 3px;
+}
+.heading{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+.heading h3{
+    font-size: larger;
+}
+.rating{
+    font-size: small;
+}
+.heading .fa-star{
+    padding: 1px;
+    color: yellow;
+    background-color: blue;
+}
+.equipment-image img{
+    width: 100%;
+}
+.equipments:hover{
+    border: 2px solid rgba(145, 141, 141, 0.438);
+}
+.equipment-content a{
+    color: rgb(33, 81, 144);
+    text-decoration: none;
+}
+.price{
+    text-decoration: none;
+    font-size: larger;
+}
+@media (max-width:750px){
+    .products{
+        display: flex;
+        flex-direction: column;
+    }
+}
+footer{
+    background-color: rgb(69, 69, 76);
+    height: 100px;
+    color:white;
+}

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sign up - Fitness Zone</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <a href="/login"><i class="fa fa-close fa-2x" style="color:rgb(51, 51, 133);"></i></a>
+    </header>
+
+    <center>
+        <div class="div">
+
+            <div class="register">
+                <h2>Registration</h2>
+            </div>
+
+            {{#if msg}}
+            <p class="{{msg_type}}">{{msg}}</p>
+            {{/if}}
+
+            <form action="/auth/register" method="post" id="form"onsubmit="return validate()">
+
+                <div class="data">
+                    <label for="name">Name</label>
+                    <br>
+                    <input type="text" name="name" id="name" placeholder="Enter name"onkeyup="validatename()">
+                    <p id="name-error"></p>
+                </div>
+
+                <br>
+
+                <div class="data">
+                    <label for="email">Email</label>
+                    <br>
+                    <input type="email" name="email" id="email" placeholder="Enter Email Id"onkeyup="validateemail()">
+                    <p id="email-error"></p>
+                </div>
+
+                <br>
+
+                <div class="data">
+                    <label for="password">Password</label>
+                    <br>
+                    <input type="password" name="password" id="password" placeholder="Enter Password"onkeyup="validatepassword()">
+                    <p id="password-error"></p>
+                </div>
+
+                <br>
+
+                <div class="data">
+                    <label for="confirm_password">Confirm Password</label>
+                    <br>
+                    <input type="password" name="confirmpassword" id="confirmpassword" placeholder="Re-Enter password"onkeyup="validateconfirmpassword()">
+                    <p id="confirmpassword-error"></p>
+                </div>
+
+                <br>
+
+                <div class="btn">
+                    <button type="submit" onsubmit="return validate()">Register</button>
+                </div>
+
+                <br>
+
+                <div class="signin">
+                    Already a member ? <a href="/login">Login</a>
+                </div>
+            </form>
+        </div>
+
+        <script>
+            const name = document.getElementById('name-error');
+            const email = document.getElementById('email-error');
+            const password = document.getElementById('password-error');
+            const confirmpassword = document.getElementById('confirmpassword-error');
+
+            function validatename() {
+                const namecheck = document.getElementById('name').value.trim();
+
+                if (namecheck === '') {
+                    name.innerHTML = 'Please enter username';
+                    document.getElementById("name").style.borderColor = "red";
+                    return false;
+                }
+                else if (namecheck.length > 0) {
+                    name.innerHTML = '';
+                    document.getElementById("name").style.borderColor = "green";
+                    return true;
+                }
+            }
+            function validateemail() {
+                const emailcheck = document.getElementById('email').value.trim();
+
+                if (emailcheck === '') {
+                    email.innerHTML = 'Please enter your email id';
+                    document.getElementById("email").style.borderColor = "red";
+                    return false;
+                }
+                else if (!emailcheck.match(/^([a-zA-Z0-9-_\.]+)@([a-zA-Z0-9]+)\.([a-zA-Z]{2,10})(\.[a-zA-Z]{2,8})?$/)) {
+                    email.innerHTML = 'Please enter valid email id';
+                    document.getElementById("email").style.borderColor = "red";
+                    return false;
+                }
+
+                else if (emailcheck.match(/^([a-zA-Z0-9-_\.]+)@([a-zA-Z0-9]+)\.([a-zA-Z]{2,10})(\.[a-zA-Z]{2,8})?$/)) {
+                    email.innerHTML = '';
+                    document.getElementById("email").style.borderColor = "green";
+                    return true;
+                }
+            }
+            function validatepassword() {
+                const passwordcheck = document.getElementById('password').value.trim();
+                if (passwordcheck === '') {
+                    password.innerHTML = 'Please create your password';
+                    document.getElementById("password").style.borderColor = "red";
+                    return false;
+                }
+                else if (!passwordcheck.match(/^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{7,15}$/)) {
+                    password.innerHTML = 'Password must have 7-15 characters with numbers and special characters';
+                    document.getElementById("password").style.borderColor = "red";
+                    return false;
+                }
+                else if (passwordcheck.match(/^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{7,15}$/)) {
+                    password.innerHTML = '';
+                    document.getElementById("password").style.borderColor = "Green";
+                    return true;
+                }
+            }
+            function validateconfirmpassword() {
+                const confirmpasswordcheck = document.getElementById('confirmpassword').value.trim();
+                const passwordcheck = document.getElementById('password').value.trim();
+                if (confirmpasswordcheck === '') {
+                    confirmpassword.innerHTML = 'Please confirm your password';
+                    document.getElementById("confirmpassword").style.borderColor = "red";
+                    return false;
+                }
+                else if (confirmpasswordcheck != passwordcheck) {
+                    confirmpassword.innerHTML = 'Password does not match';
+                    document.getElementById("confirmpassword").style.borderColor = "red";
+                    return false;
+                }
+                else if (confirmpasswordcheck === passwordcheck) {
+                    confirmpassword.innerHTML = '';
+                    document.getElementById("confirmpassword").style.borderColor = "Green";
+                    return true;
+                }
+            }
+            function validate() {
+                if (!validatename() || !validateemail() || !validatepassword() || !validateconfirmpassword()) {
+                    alert('PLEASE FILL ALL THE FIELD TO REGISTER');
+                    return false;
+                }
+            }
+
+        </script>
+
+    </center>
+
+</body>
+
+</html>

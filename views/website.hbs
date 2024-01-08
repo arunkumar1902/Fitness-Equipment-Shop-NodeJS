@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Fitness-Zone</title>
+    <link rel="stylesheet" href="/css/webcss.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="menubar">
+
+            {{> navbar}}
+
+            {{#if msg}}
+            <div class="menuright">
+                <a href="#"><b class="fa fa-shopping-cart"></b></a>
+                <a href="#"><b class="fa fa-user"></b></a>
+                <a href="/logout">logout</a>
+            </div>
+            
+            {{else}}
+            <div class="menuright">
+                <a href="/login"><b class="login">Login</b></a>
+            </div>
+            {{/if}}
+
+            
+
+        </div>
+    </header>
+
+
+    <div class="main">
+
+        <h2>New Arrivals</h2>
+
+        <div class="products">
+
+            <div class="equipments">
+                <div class="equipment-image">
+                    <div class="heading">
+                        <h3>Treadmill</h3>
+                        <p class="rating">4.5 / 5&nbsp;<span class="fa fa-star"></span></p>
+                    </div>
+
+                    <a href="/threadmill"><img src="/product/treadmill.png"></a>
+                    <br>
+                </div>
+                <div class="equipment-content">
+                    <a href="/threadmill"><b>Manual Multi Functional Treadmill 4 in 1</b></a>
+                    <br><br>
+                    <p>Price:
+                        &#8377;<del>12,500</del>&nbsp; <!-- &#8377 - Indian rupee sign -->
+                        <ins class="price">&#8377;11,999</ins>
+                    </p>
+
+                </div>
+            </div>
+            <div class="equipments">
+                <div class="equipment-image">
+                    <div class="heading">
+                        <h3>Multi Gym</h3>
+                        <p class="rating"> 4.3 / 5&nbsp;<span class="fa fa-star"></span></p>
+                    </div>
+
+                    <a href="/multigym"><img src="/product/multi.png"></a>
+                    <br>
+                </div>
+                <div class="equipment-content">
+                    <a href="/multigym"><b>Chest Personal 4 Station Gym</b></a>
+                    <br><br>
+                    <p>Price:
+                        &#8377;<del>50,500</del>&nbsp;
+                        <ins class="price">&#8377;49,998</ins>
+                    </p>
+
+                </div>
+            </div>
+
+            <div class="equipments">
+                <div class="equipment-image">
+                    <div class="heading">
+                        <h3>Deltoid Raise Machine</h3>
+                        <p class="rating"> 4.5 / 5&nbsp;<span class="fa fa-star"></span></p>
+                    </div>
+
+                    <a href="/deltoid_raise"><img src="/product/deltoid raise machine.png"></a>
+                    <br>
+                </div>
+                <div class="equipment-content">
+                    <a href="/deltoid_raise"><b>Energie Fitness Deltoid Raise Machine</b></a>
+                    <br><br>
+                    <p>Price:
+                        &#8377;<del>79,500</del>&nbsp;
+                        <ins class="price">&#8377;78,000</ins>
+                    </p>
+
+                </div>
+            </div>
+
+            <div class="equipments">
+                <div class="equipment-image">
+                    <div class="heading">
+                        <h3>Bench Press</h3>
+                        <p class="rating"> 4.7 / 5&nbsp;<span class="fa fa-star"></span></p>
+                    </div>
+
+                    <a href="/bench_press"><img src="/product/bench press.png"></a>
+                    <br>
+                </div>
+                <div class="equipment-content">
+                    <a href="/bench_press"><b>Olympic Flat Bench Press, For Gym</b></a>
+                    <br><br>
+                    <p>Price:
+                        &#8377;<del>33,500</del>&nbsp;
+                        <ins class="price">&#8377;32,000</ins>
+                    </p>
+
+                </div>
+            </div>
+
+            <div class="equipments">
+                <div class="equipment-image">
+                    <div class="heading">
+                        <h3>Fitness Pump</h3>
+                        <p class="rating"> 4.5 / 5&nbsp;<span class="fa fa-star"></span></p>
+                    </div>
+
+                    <a href="/fitness_pump"><img src="/product/fitness pump.png"></a>
+                    <br>
+                </div>
+                <div class="equipment-content">
+                    <a href="/fitness-pump"><b>Fitness Pump</b></a>
+                    <br><br>
+                    <p>Price:
+                        &#8377;<del>2,000</del>&nbsp;
+                        <ins class="price">&#8377;1,500</ins>
+                    </p>
+
+                </div>
+            </div>
+
+            <div class="equipments">
+                <div class="equipment-image">
+                    <div class="heading">
+                        <h3>Mini Stepper</h3>
+                        <p class="rating"> 4.2 / 5&nbsp;<span class="fa fa-star"></span></p>
+                    </div>
+
+                    <a href="/mini_stepper"><img src="/product/mini stepper.png"></a>
+                    <br>
+                </div>
+                <div class="equipment-content">
+                    <a href="/mini_stepper"><b>Iron Gym Mini Stepper Machine</b></a>
+                    <br><br>
+                    <p>Price:
+                        &#8377;<del>3,499</del>&nbsp;
+                        <ins class="price">&#8377;2,800</ins>
+                    </p>
+
+                </div>
+            </div>
+
+            <div class="equipments">
+                <div class="equipment-image">
+                    <div class="heading">
+                        <h3>Multi Gym</h3>
+                        <p class="rating"> 4.4 / 5&nbsp;<span class="fa fa-star"></span></p>
+                    </div>
+
+                    <a href="/multi_gym"><img src="/product/multigym.png"></a>
+                    <br>
+                </div>
+                <div class="equipment-content">
+                    <a href="/multi_gym"><b>Light Commercial Multi Gym</b></a>
+                    <br><br>
+                    <p>Price:
+                        &#8377;<del>77,500</del>&nbsp;
+                        <ins class="price">&#8377;49,998</ins>
+                    </p>
+                </div>
+            </div>
+
+            <div class="equipments">
+                <div class="equipment-image">
+                    <div class="heading">
+                        <h3>Exercise Bike</h3>
+                        <p class="rating"> 4.6 / 5&nbsp;<span class="fa fa-star"></span></p>
+                    </div>
+
+                    <a href="/exercise_bike"><img src="/product/spin exercise bike.png"></a>
+                    <br>
+                </div>
+                <div class="equipment-content">
+                    <a href="/exercise_bike"><b>Swift Fitness LADYBIRD Spin Bike</b></a>
+                    <br><br>
+                    <p>Price:
+                        &#8377;<del>11,500</del>&nbsp;
+                        <ins class="price">&#8377;10,000</ins>
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <h3></h3>
+    </footer>
+
+</body>
+
+</html>

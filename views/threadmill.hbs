@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Fitness-Zone</title>
+    <link rel="stylesheet" href="/css/webcss.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/product.css">
+</head>
+
+<body>
+    <header>
+        <div class="menubar">
+
+            {{> navbar}}
+
+            {{#if msg}}
+            <div class="menuright">
+                <a href="#"><b class="fa fa-shopping-cart"></b></a>
+                <a href="#"><b class="fa fa-user"></b></a>
+                <a href="/logout">logout</a>
+            </div>
+
+            {{else}}
+            <div class="menuright">
+                <a href="/login"><b class="login">Login</b></a>
+            </div>
+            {{/if}}
+
+        </div>
+    </header>
+    <br>
+    <br>
+    
+    <div class="product_div">
+
+        <div class="product-details">
+
+            <div class="image">
+                <img src="/product/treadmill.png">
+            </div>
+
+            <div class="details">
+                <h2>Manual Multi Functional Treadmill 4 in 1,Usage Type: Heavy Duty Home Use</h2>
+                <table>
+                    <tr>
+                        <th>Types of Threadmill</th>
+                        <td>Manual, Folding</td>
+                    </tr>
+                    <tr>
+                        <th>Category</th>
+                        <td>Heavy Duty Home Use</td>
+                    </tr>
+                    <tr>
+                        <th>Features</th>
+                        <td>Heart Rate Monitor, Multi Purpose</td>
+                    </tr>
+                    <tr>
+                        <th>Handling Options</th>
+                        <td>Foldable, Adjustable Incline</td>
+                    </tr>
+                </table>
+                <br>
+                <p style="font-size: larger;">Price:&nbsp;
+                    &#8377;<del>12,500</del>&nbsp;<ins class="price">&#8377;11,999</ins>
+                </p>
+                <p style="font-size: larger;">Rating:&nbsp;
+                    <span class="fa fa-star" style="color: red"></span>
+                    <span class="fa fa-star" style="color: red"></span>
+                    <span class="fa fa-star" style="color: red"></span>
+                    <span class="fa fa-star" style="color: red"></span>
+                    <span class="fa fa-star"></span>
+                </p>
+                <div class="button">
+                    <button class="cart">Add to cart</button>
+                    <button class="buy">Buy Now</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
